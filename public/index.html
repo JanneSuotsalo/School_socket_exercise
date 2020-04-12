@@ -1,14 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Socket.IO chat</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body onload="addName()">
+
+    <ul id="rooms">
+      <li id="roomTitle">Choose a room</li>
+      <button class="room" onclick="changeRoom(this)">Room 1</li>
+      <button class="room" onclick="changeRoom(this)">Room 2</li>
+      <button class="room" onclick="changeRoom(this)">Room 3</li>
+    </ul>
+
     <ul id="messages"></ul>
+
     <form action="">
-      <input id="m" autocomplete="off" placeholder="hello">
+      <input id="m" autocomplete="off" placeholder="hello" />
       <button>Send</button>
     </form>
     <script src="/socket.io/socket.io.js"></script>
